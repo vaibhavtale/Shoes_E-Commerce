@@ -21,6 +21,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
         tabBackgroundColor: Colors.grey.shade100,
         mainAxisAlignment: MainAxisAlignment.center,
         tabBorderRadius: 16,
+        gap: 8,
         onTabChange: (value)=> widget.onTabChange!(value),
         tabs: [
           GButton(icon: Icons.home, text: "Shop",),

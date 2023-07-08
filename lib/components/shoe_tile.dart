@@ -4,8 +4,9 @@ import '../models/shoe.dart';
 
 class ShoeTile extends StatelessWidget {
   final Shoe shoe;
+  final void Function()? onTap;
 
-  const ShoeTile({Key? key, required this.shoe}) : super(key: key);
+  const ShoeTile({Key? key, required this.shoe, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,16 +51,19 @@ class ShoeTile extends StatelessWidget {
                     ),),
                   ],
                 ),
-                Container(
-                  padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(12),
-                          bottomRight: Radius.circular(12))),
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.white,
+                GestureDetector(
+                  onTap: onTap,
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(12),
+                            bottomRight: Radius.circular(12))),
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
                   ),
                 )
               ],
